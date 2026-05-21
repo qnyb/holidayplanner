@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_ID: 33
+        GROUP_ID: 33
+    environment:
+      CONTAINER_ROLE: web
+    volumes:
+      - './app/storage/app/private:/var/www/html/storage/app/private'
+      - './app/storage/app/public:/var/www/html/storage/app/public'
