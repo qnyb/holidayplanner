@@ -286,14 +286,14 @@ function formatDate(iso: string | null): string {
 
     <div class="flex flex-col gap-6 p-4">
         <!-- Header -->
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
                 <h1 class="text-2xl font-bold tracking-tight">Seyahat Planım</h1>
                 <p class="text-sm text-muted-foreground">
                     Gitmek istediğin yerleri planla ve takip et
                 </p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
                 <input
                     ref="importInput"
                     type="file"
