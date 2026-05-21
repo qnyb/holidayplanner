@@ -10,7 +10,7 @@ RUN npm ci
 
 COPY --chown=www-data:www-data . /var/www/html
 #RUN node bin/build.js
-RUN npm run build
+RUN NODE_TLS_REJECT_UNAUTHORIZED=0 npm run build
 
 FROM ghcr.io/gitmavera/laravel-base:php85-node22
 
