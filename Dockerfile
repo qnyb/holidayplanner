@@ -40,4 +40,4 @@ RUN mkdir -p storage/framework/sessions storage/framework/views storage/framewor
 COPY --chown=www-data:www-data . /var/www/html
 COPY --from=builder /var/www/html/vendor /var/www/html/vendor
 COPY --from=builder /var/www/html/public/build /var/www/html/public/build
-COPY --from=builder /var/www/html/public/js /var/www/html/public/js
+#COPY --from=builder /var/www/html/public/js /var/www/html/public/js
