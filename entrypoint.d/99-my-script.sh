@@ -72,7 +72,6 @@ success "Seed completed"
 # Optimization
 log "Optimizing application..."
 php artisan optimize
-php artisan filament:optimize
 success "Optimization completed"
 
 
