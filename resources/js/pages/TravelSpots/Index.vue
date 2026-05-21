@@ -22,11 +22,11 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
     Dialog,
-    DialogContent,
     DialogFooter,
     DialogHeader,
     DialogTitle,
 } from '@/components/ui/dialog';
+import DialogScrollContent from '@/components/ui/dialog/DialogScrollContent.vue';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
@@ -302,8 +302,8 @@ function formatDate(iso: string | null): string {
                     @change="handleImportFile"
                 />
                 <Button variant="outline" size="sm" :disabled="isImporting" @click="triggerImport">
-                    <Upload class="mr-2 h-4 w-4" />
-                    {{ isImporting ? 'Aktarılıyor...' : 'İçe Aktar' }}
+                    <Upload class="h-4 w-4 sm:mr-2" />
+                    <span class="hidden sm:inline">{{ isImporting ? 'Aktarılıyor...' : 'İçe Aktar' }}</span>
                 </Button>
                 <Button
                     variant="outline"
@@ -311,12 +311,12 @@ function formatDate(iso: string | null): string {
                     as="a"
                     :href="TravelSpotController.exportMethod.url()"
                 >
-                    <Download class="mr-2 h-4 w-4" />
-                    Dışa Aktar
+                    <Download class="h-4 w-4 sm:mr-2" />
+                    <span class="hidden sm:inline">Dışa Aktar</span>
                 </Button>
                 <Button @click="openCreate">
-                    <Plus class="mr-2 h-4 w-4" />
-                    Mekan Ekle
+                    <Plus class="h-4 w-4 sm:mr-2" />
+                    <span class="hidden sm:inline">Mekan Ekle</span>
                 </Button>
             </div>
         </div>
@@ -471,7 +471,7 @@ function formatDate(iso: string | null): string {
 
     <!-- Add/Edit Dialog -->
     <Dialog v-model:open="showDialog">
-        <DialogContent class="max-w-lg">
+        <DialogScrollContent class="max-w-lg">
             <DialogHeader>
                 <DialogTitle>
                     {{ editingSpot ? 'Mekanı Düzenle' : 'Yeni Mekan Ekle' }}
@@ -604,6 +604,6 @@ function formatDate(iso: string | null): string {
                     </Button>
                 </DialogFooter>
             </form>
-        </DialogContent>
+        </DialogScrollContent>
     </Dialog>
 </template>
