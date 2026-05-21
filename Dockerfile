@@ -9,7 +9,7 @@ COPY --chown=www-data:www-data package.json package-lock.json ./
 RUN npm ci
 
 COPY --chown=www-data:www-data . /var/www/html
-RUN node bin/build.js
+#RUN node bin/build.js
 RUN npm run build
 
 FROM ghcr.io/gitmavera/laravel-base:php85-node22
